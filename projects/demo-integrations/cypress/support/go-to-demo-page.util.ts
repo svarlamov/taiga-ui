@@ -71,7 +71,7 @@ export const goToDemoPage = (path: string, options: Options = {}) => {
         waitAllRequests('@icons');
     }
 
-    cy.get('._is-cypress-mode').as('app');
+    cy.get('._is-cypress-mode').should('exist').as('app');
 
     if (hideCursor) {
         cy.get('@app').invoke('addClass', '_hide-cursor');
